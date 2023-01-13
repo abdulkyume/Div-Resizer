@@ -48,6 +48,26 @@ export class AppComponent implements OnInit {
           if (height > minimum_size) {
             element.style.height = height + 'px';
           }
+        } else if (currentResizer.classList.contains('bottom-middle')) {
+          const height = original_height + (e.pageY - original_mouse_y);
+          if (height > minimum_size) {
+            element.style.height = height + 'px';
+          }
+        } else if (currentResizer.classList.contains('left-middle')) {
+          const width = original_width + (e.pageX - original_mouse_x);
+          if (width > minimum_size) {
+            element.style.width = width + 'px';
+            element.style.left =
+              original_x + (e.pageX - original_mouse_x) + 'px';
+          }
+        } else if (currentResizer.classList.contains('right-middle')) {
+          const width = original_width + (e.pageX - original_mouse_x);
+          const height = original_height + (e.pageY - original_mouse_y);
+          if (width > minimum_size) {
+            element.style.width = width + 'px';
+            element.style.left =
+              original_x + (e.pageX - original_mouse_x) + 'px';
+          }
         } else if (currentResizer.classList.contains('bottom-left')) {
           const height = original_height + (e.pageY - original_mouse_y);
           const width = original_width - (e.pageX - original_mouse_x);
@@ -65,6 +85,14 @@ export class AppComponent implements OnInit {
           if (width > minimum_size) {
             element.style.width = width + 'px';
           }
+          if (height > minimum_size) {
+            element.style.height = height + 'px';
+            element.style.top =
+              original_y + (e.pageY - original_mouse_y) + 'px';
+          }
+        } else if (currentResizer.classList.contains('top-middle')) {
+          const width = original_width + (e.pageX - original_mouse_x);
+          const height = original_height - (e.pageY - original_mouse_y);
           if (height > minimum_size) {
             element.style.height = height + 'px';
             element.style.top =
