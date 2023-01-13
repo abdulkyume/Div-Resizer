@@ -40,3 +40,29 @@
   bottom: -5px;
   cursor: nwse-resize;
 }
+
+.resizable .resizers .resizer.top-middle {
+  left: 50%;
+  top: -5px;
+  cursor: row-resize; /*resizer cursor*/
+  transform: translate(-50%);
+}
+.resizable .resizers .resizer.left-middle {
+  top: 50%;
+  left: -5px;
+  cursor: col-resize; /*resizer cursor*/
+  transform: translate(0, -50%);
+}
+.resizable .resizers .resizer.bottom-middle {
+  left: 50%;
+  bottom: -5px;
+  cursor: row-resize; /*resizer cursor*/
+  transform: translate(-50%);
+}
+.resizable .resizers .resizer.right-middle {
+  top: 50%;
+  right: -5px;
+  bottom: -5px;
+  cursor: col-resize;
+  transform: translate(0, -50%);
+}
