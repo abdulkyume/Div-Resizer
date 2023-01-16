@@ -56,7 +56,8 @@ export class AppComponent implements OnInit {
         } else if (currentResizer.classList.contains('left-middle')) {
           const width = original_width + (e.pageX - original_mouse_x);
           if (width > minimum_size) {
-            element.style.width = width + 'px';
+            element.style.width =
+              original_x - (e.pageX - original_mouse_x) + 'px';
             element.style.left =
               original_x + (e.pageX - original_mouse_x) + 'px';
           }
@@ -65,8 +66,8 @@ export class AppComponent implements OnInit {
           const height = original_height + (e.pageY - original_mouse_y);
           if (width > minimum_size) {
             element.style.width = width + 'px';
-            element.style.left =
-              original_x + (e.pageX - original_mouse_x) + 'px';
+            // element.style.left =
+            //   original_x + (e.pageX - original_mouse_x) + 'px';
           }
         } else if (currentResizer.classList.contains('bottom-left')) {
           const height = original_height + (e.pageY - original_mouse_y);
